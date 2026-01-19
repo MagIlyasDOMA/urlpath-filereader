@@ -1,8 +1,16 @@
-import requests
+import requests, chardet
 from pathlib import Path
 from urllib.parse import urlparse
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
+__all__ = ['__version__', 'detect_encoding', 'is_url', 'read_file']
+
+
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as file:
+        raw_data = file.read()
+        result = chardet.detect(raw_data)
+        return result['encoding']
 
 
 def is_url(source: str) -> bool:

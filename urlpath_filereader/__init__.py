@@ -2,7 +2,7 @@ import requests, chardet
 from pathlib import Path
 from urllib.parse import urlparse
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __all__ = ['__version__', 'detect_encoding', 'is_url', 'read_file']
 
 
@@ -18,7 +18,7 @@ def is_url(source: str) -> bool:
     return bool(parsed.scheme and parsed.netloc)
 
 
-def read_file(source: str, encoding: str) -> str:
+def read_file(source: str) -> str:
     if is_url(source):
         response = requests.get(source)
         response.raise_for_status()
@@ -26,5 +26,5 @@ def read_file(source: str, encoding: str) -> str:
     path = Path(source)
     if not path.exists():
         raise FileNotFoundError(f"File not found: {source}")
-    return path.read_text(encoding)
+    return path.read_text(detect_encoding(path))
 

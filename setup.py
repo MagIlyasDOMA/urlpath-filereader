@@ -3,7 +3,7 @@ from pip_setuptools import setup, find_packages, requirements, clean
 clean()
 setup(
     name='urlpath-filereader',
-    version='1.1.1',
+    version='1.2.0',
     packages=find_packages(),
     install_requires=requirements(),
     author="Маг Ильяс DOMA (MagIlyasDOMA)",
@@ -13,6 +13,7 @@ setup(
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.10',

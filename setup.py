@@ -1,4 +1,4 @@
-from pip_setuptools import setup, find_packages, requirements, clean
+from pip_setuptools import setup, find_packages, requirements, clean, readme
 
 clean()
 setup(
@@ -24,5 +24,8 @@ setup(
         'Operating System :: OS Independent',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
-    ]
+    ],
+    description='urlpath-filereader - библиотека для чтения файлов из локальной файловой системы и URL-адресов',
+    long_description=readme(),
+    long_description_content_type='text/markdown',
 )

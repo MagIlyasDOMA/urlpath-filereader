@@ -1,2 +1,5 @@
 test
 .idea
+build
+dist
+urlpath_filereader.egg-info
